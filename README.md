@@ -14,9 +14,9 @@ main.tf contains the vpc, ec2, elb and codepipeline
 - EC2: creates 1 ec2 instance in public subnet with port 80 & 22 open also sshkey is created
 - elb: creates public dns (A record) and routes traffic to private EC2 instance on port 80 and 22
 - Codepipeline: creates "tf-test-pipeline" with 3 phases
-                - source: pulls github updates from the repo and branch then stores it as [SourceArtifact]
-                - build: runs build instructions in the builspec.yml located in the target github then stores it as [BuildArtifact]
-                - deploy: takes the [BuildArtifact] in the build phase and deploys it on the EC2 using the codedeploy-agent, the appspec.yml located in the target github can contain steps for the lifecycle of the application
+- source: pulls github updates from the repo and branch then stores it as [SourceArtifact]
+- build: runs build instructions in the builspec.yml located in the target github then stores it as [BuildArtifact]
+- deploy: takes the [BuildArtifact] in the build phase and deploys it on the EC2 using the codedeploy-agent, the appspec.yml located in the target github can contain steps for the lifecycle of the application
 
 ## Terraform modules
 located in the ./modules/ path
