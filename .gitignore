@@ -1,0 +1,6 @@
+.terraform/
+.terraform*
+provider.tf
+./src/terraform.tfstate
+./src/terraform.tfstate.backup
+*.pem*
